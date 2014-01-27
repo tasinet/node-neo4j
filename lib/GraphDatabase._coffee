@@ -719,6 +719,9 @@ module.exports = class GraphDatabase
             if typeof query isnt 'string'
                 throw new Error 'Query is expected to be a string'
 
+            if process.argv.indexOf('--debug') isnt -1
+                console.log query
+
             response = @_request.post
                 uri: endpoint
                 json: {query, params}

@@ -103,7 +103,7 @@ module.exports = class Node extends PropertyContainer
             # If so, fetch and delete in parallel:
             if force
                 relationships = @all null, _
-                relationships.forEach_ _, {parallel: true}, (_, rel) ->
+                relationships.forEach_ _, {parallel: false}, (_, rel) ->
                     rel.delete _
 
         catch error
